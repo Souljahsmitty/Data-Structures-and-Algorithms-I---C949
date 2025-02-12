@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question13 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,23 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "13. What does a time complexity analysis of an algorithm include?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "Memory usage" },
+        { label: "B", text: "Efficiency analysis" },
+        { label: "C", text: "Screen load times" },
+        { label: "D", text: "Worst case" }
     ];
-    const correctAnswer = "A";
+    const correctAnswer = "D";
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
     if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
+        setFeedback("✅ Correct! Time complexity analysis includes worst-case complexity, which determines the maximum time an algorithm takes in the most demanding scenario.");
     } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
+        setFeedback("❌ Incorrect. The correct answer is D. Time complexity analysis evaluates worst-case performance to ensure an algorithm runs efficiently even in the most challenging conditions.");
+    }  // 🔹 Correct closing brace here ✅
 };
+
 
 
 
@@ -74,12 +75,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question12" className="nav-button">← Back to Question 12</Link>
+                <Link to="/question14" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question13;
+

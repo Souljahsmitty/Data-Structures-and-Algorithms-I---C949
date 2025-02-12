@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question25 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,24 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "25. What is the result when 6 is enqueued to the queue 7,9,8 (with 7 as the front)?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "6,7,9,8" },
+        { label: "B", text: "7,9,8,6" },
+        { label: "C", text: "6,7,9" },
+        { label: "D", text: "7,9,6" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "B";  // ✅ "7,9,8,6" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
-
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! The queue follows **FIFO (First In, First Out)** order, so the new element (6) is added to the end of the queue, making it **7,9,8,6**.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is **B. 7,9,8,6**. In a queue, new elements are always added to the **rear**.");
+        }
+    };
 
 
     // ✅ Handle Reset Button Click
@@ -74,12 +74,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question24" className="nav-button">← Back to Question 24</Link>
+                <Link to="/question26" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question25;
+

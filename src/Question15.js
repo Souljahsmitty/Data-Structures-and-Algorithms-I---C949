@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question15 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,23 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+     const question = "15. Which function is used in conjunction with a merge sort algorithm?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "for loop" },
+        { label: "B", text: "if statement" },
+        { label: "C", text: "DO while loop" },
+        { label: "D", text: "Recursive" }
     ];
-    const correctAnswer = "A";
+    const correctAnswer = "D";
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! Merge Sort is a **divide-and-conquer** algorithm that relies on recursion to split the array into halves and merge them back efficiently.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is D. **Recursive functions** are essential for Merge Sort because they break down the problem into smaller subproblems until they become simple enough to solve directly.");
+        }
+    };
+
 
 
 
@@ -74,12 +75,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question14" className="nav-button">← Back to Question 14</Link>
+                <Link to="/question16" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question15;
+

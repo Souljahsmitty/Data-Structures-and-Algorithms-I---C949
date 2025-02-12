@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question19 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,23 +18,25 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "19. Which search algorithm functions by continually dividing the data set in half until the sought item is found or the data set is exhausted?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "Sequential search" },
+        { label: "B", text: "Binary search" },
+        { label: "C", text: "Jump search" },
+        { label: "D", text: "Linear search" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "B";  // ✅ "Binary Search" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! **Binary Search** repeatedly divides the data set in half, eliminating one half each step until the target element is found or the data set is exhausted.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is **B. Binary Search**. This algorithm requires a **sorted dataset** and repeatedly halves the search space to locate the target efficiently.");
+        }
+    };
+
 
 
 
@@ -74,12 +76,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question18" className="nav-button">← Back to Question 18</Link>
+                <Link to="/question20" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question19;
+

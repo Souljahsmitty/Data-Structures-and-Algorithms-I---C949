@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question27 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,24 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "27. Which queue results from executing the following queue operations on the queue 7,9,8 (with 7 as the front)? Dequeue () Enqueue (6) Enqueue (S) Dequeue ()";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "5,6,7" },
+        { label: "B", text: ",a,s" },
+        { label: "C", text: "8,6,5" },
+        { label: "D", text: "9,8,6" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "D";  // ✅ "9,8,6" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
-
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! **Dequeue()** removes 7, then **Enqueue(6) and Enqueue(S)** add 6 and S to the end, followed by **Dequeue()** removing 9, resulting in **9,8,6**.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is **D. 9,8,6**. A queue follows FIFO, so the operations must be processed in order.");
+        }
+    };
 
 
     // ✅ Handle Reset Button Click
@@ -74,12 +74,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question26" className="nav-button">← Back to Question 26</Link>
+                <Link to="/question28" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question27;
+

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question18 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,23 +18,25 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "18. What is an if statement inside of an if statement referred to as?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "Nested" },
+        { label: "B", text: "Internal" },
+        { label: "C", text: "Double if" },
+        { label: "D", text: "Subscript" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "A";  // "Nested" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! When an `if` statement is placed inside another `if` statement, it is called a **nested if statement**.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is A. A **nested if statement** is an `if` statement inside another `if` statement, allowing conditional logic within different conditions.");
+        }
+    };
+
 
 
 
@@ -74,12 +76,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question17" className="nav-button">← Back to Question 17</Link>
+                <Link to="/question19" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question18;
+

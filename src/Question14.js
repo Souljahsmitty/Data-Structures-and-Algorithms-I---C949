@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question14 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,23 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "14. Which data type do heap sorts work with?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "Tree-based data structure" },
+        { label: "B", text: "Array" },
+        { label: "C", text: "String" },
+        { label: "D", text: "Number" }
     ];
     const correctAnswer = "A";
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! The Heap is a special type of Binary Tree (Complete Binary Tree), and Heap Sort uses this structure for sorting.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is A. The Heap is a special type of Binary Tree (Complete Binary Tree), and Heap Sort uses this structure for sorting.");
+        }
+    };
+
 
 
 
@@ -74,12 +75,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question13" className="nav-button">← Back to Question 13</Link>
+                <Link to="/question15" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question14;
+

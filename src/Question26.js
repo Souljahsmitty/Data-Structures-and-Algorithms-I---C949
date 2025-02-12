@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question26 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,24 +18,23 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "26. Which value would be returned from executing the dequeue operation on the queue 7,9,8 (with 7 as the front)?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "7,9,8" },
+        { label: "B", text: "9" },
+        { label: "C", text: "8" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "B";  // ✅ "9" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
-
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! The **dequeue operation** removes the front element, which is **7**, leaving 9 as the new front of the queue.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is **B. 9**. The queue follows FIFO, so 7 is removed, and 9 becomes the new front.");
+        }
+    };
 
 
     // ✅ Handle Reset Button Click
@@ -74,12 +73,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question25" className="nav-button">← Back to Question 25</Link>
+                <Link to="/question27" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question26;
+

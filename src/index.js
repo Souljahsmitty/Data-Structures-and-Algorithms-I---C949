@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles.css";
 import TimerProvider from "./TimerContext";  // Import TimerProvider
 import Introduction from "./Introduction";
@@ -15,6 +16,23 @@ import Question8 from "./Question8";
 import Question9 from "./Question9";
 import Question10 from "./Question10";
 import Question11 from "./Question11";
+import Question12 from "./Question12";
+import Question13 from "./Question13";
+import Question14 from "./Question14";
+import Question15 from "./Question15";
+import Question16 from "./Question16";
+import Question17 from "./Question17";
+import Question18 from "./Question18";
+import Question19 from "./Question19";
+import Question20 from "./Question20";
+import Question21 from "./Question21";
+import Question22 from "./Question22";
+import Question23 from "./Question23";
+import Question24 from "./Question24";
+import Question25 from "./Question25";
+import Question26 from "./Question26";
+import Question27 from "./Question27";
+import Question28 from "./Question28";
 
 const App = () => {
     return (
@@ -34,6 +52,23 @@ const App = () => {
 						<Route path="/question9" element={<Question9 />} />
 						<Route path="/question10" element={<Question10 />} />
 						<Route path="/question11" element={<Question11 />} />
+						<Route path="/question12" element={<Question12 />} />
+						<Route path="/question13" element={<Question13 />} />
+						<Route path="/question14" element={<Question14 />} />
+						<Route path="/question15" element={<Question15 />} />
+						<Route path="/question16" element={<Question16 />} />
+						<Route path="/question17" element={<Question17 />} />
+						<Route path="/question18" element={<Question18 />} />
+						<Route path="/question19" element={<Question19 />} />
+						<Route path="/question20" element={<Question20 />} />
+						<Route path="/question21" element={<Question21 />} />
+						<Route path="/question22" element={<Question22 />} />
+						<Route path="/question23" element={<Question23 />} />
+						<Route path="/question24" element={<Question24 />} />
+						<Route path="/question25" element={<Question25 />} />
+						<Route path="/question26" element={<Question26 />} />
+						<Route path="/question27" element={<Question27 />} />
+						<Route path="/question28" element={<Question28 />} />
                     </Routes>
                 </div>
             </Router>
@@ -47,3 +82,4 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById("root")
 );
+

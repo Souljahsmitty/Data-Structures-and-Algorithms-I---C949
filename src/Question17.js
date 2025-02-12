@@ -2,12 +2,14 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+
+
+const Question17 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
-    
+
     if (!timerContext) {
-        return <p>Loading...</p>; // Avoids crash if context is undefined
+        return <p>Loading...</p>; // Prevents crash if context is undefined
     }
 
     const { timeLeft, resetTimer } = timerContext;
@@ -18,31 +20,47 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = `17. What is x in the following block of logic? 
+
+    x = 28
+
+    If x >= 10 and x < 20
+        x = 20
+    elif x <= 30
+        x = 25
+    elif x >= 50
+        x = 100
+    else
+        x = 500`;
+
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "20" },
+        { label: "B", text: "25" },
+        { label: "C", text: "100" },
+        { label: "D", text: "500" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "B";  // 25 is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
-
-
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! Since `x = 28`, the second condition `elif x <= 30` is true, so `x` is assigned the value `25`.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is B. Since `x = 28`, it does not satisfy the first condition (`x >= 10 and x < 20`), but it does satisfy the second condition (`x <= 30`), setting `x` to `25`.");
+        }
+    };
 
     // ✅ Handle Reset Button Click
     const handleReset = () => {
         resetTimer(); // Reset Timer
         navigate("/"); // Navigate to Introduction Page
     };
+
+
+
+
+    
 
     return (
         <div>
@@ -74,12 +92,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question16" className="nav-button">← Back to Question 16</Link>
+                <Link to="/question18" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question17;
+

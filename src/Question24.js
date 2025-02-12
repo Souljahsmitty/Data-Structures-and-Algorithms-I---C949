@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TimerContext } from "./TimerContext";
 
-const Question7 = () => {
+const Question24 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
     
@@ -18,24 +18,24 @@ const Question7 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "7. What is a high-level consideration in an algorithm's design?";
+    const question = "24. Which characteristic of a class allows it to be used as an abstract data type (ADT)?";
     const options = [
-        { label: "A", text: "Simplicity" },
-        { label: "B", text: "Database Type" },
-        { label: "C", text: "Finiteness" },
-        { label: "D", text: "Browser type" }
+        { label: "A", text: "Overloading" },
+        { label: "B", text: "Instantiation" },
+        { label: "C", text: "It consists of variables and methods." },
+        { label: "D", text: "Overriding" }
     ];
-    const correctAnswer = "A";
+
+    const correctAnswer = "C";  // ✅ "It consists of variables and methods." is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
-    if (selected === correctAnswer) {
-        setFeedback("✅ Correct! Simplicity is a high-level consideration in algorithm design, ensuring that the algorithm is easy to understand, implement, and maintain.");
-    } else {
-        setFeedback("❌ Incorrect. The correct answer is A. Simplicity helps in making an algorithm efficient, readable, and less prone to errors.");
-    }
-};
-
+        if (selected === correctAnswer) {
+            setFeedback("✅ Correct! A class is considered an ADT because it consists of **variables and methods** that define behavior and encapsulation.");
+        } else {
+            setFeedback("❌ Incorrect. The correct answer is **C. It consists of variables and methods.** Classes serve as ADTs by encapsulating state and behavior.");
+        }
+    };
 
 
     // ✅ Handle Reset Button Click
@@ -74,12 +74,13 @@ const Question7 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question6" className="nav-button">← Back to Question 6</Link>
-                <Link to="/question8" className="nav-button">Next Question →</Link>
+				<Link to="/question23" className="nav-button">← Back to Question 23</Link>
+                <Link to="/question25" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>
     );
 };
 
-export default Question7;
+export default Question24;
+

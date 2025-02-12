@@ -1,55 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import ReactDOM from "react-dom";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
-//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./styles.css";
-import TimerProvider from "./TimerContext";  // Import TimerProvider
-import Introduction from "./Introduction";
-import Question1 from "./Question1";
-import Question2 from "./Question2";
-import Question3 from "./Question3";
-import Question4 from "./Question4";
-import Question5 from "./Question5";
-import Question6 from "./Question6";
-import Question7 from "./Question7";
-import Question8 from "./Question8";
-import Question9 from "./Question9";
-import Question10 from "./Question10";
-import Question11 from "./Question11";
-
-const App = () => {
-    return (
-        <TimerProvider>  {/* Wrap the entire Router with TimerProvider */}
-            <Router>
-                <div className="quiz-container">
-                    <Routes>
-                        <Route path="/" element={<Introduction />} />
-                        <Route path="/question1" element={<Question1 />} />
-                        <Route path="/question2" element={<Question2 />} />
-                        <Route path="/question3" element={<Question3 />} />
-                        <Route path="/question4" element={<Question4 />} />
-						<Route path="/question5" element={<Question5 />} />
-						<Route path="/question6" element={<Question6 />} />
-						<Route path="/question7" element={<Question7 />} />
-						<Route path="/question8" element={<Question8 />} />
-						<Route path="/question9" element={<Question9 />} />
-						<Route path="/question10" element={<Question10 />} />
-						<Route path="/question11" element={<Question11 />} />
-                    </Routes>
-                </div>
-            </Router>
-        </TimerProvider>
-    );
-};
-
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById("root")
-);
-=======
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
@@ -97,30 +45,7 @@ const App = () => {
                         <Route path="/question2" element={<Question2 />} />
                         <Route path="/question3" element={<Question3 />} />
                         <Route path="/question4" element={<Question4 />} />
-						<Route path="/question5" element={<Question5 />} />
-						<Route path="/question6" element={<Question6 />} />
-						<Route path="/question7" element={<Question7 />} />
-						<Route path="/question8" element={<Question8 />} />
-						<Route path="/question9" element={<Question9 />} />
-						<Route path="/question10" element={<Question10 />} />
-						<Route path="/question11" element={<Question11 />} />
-						<Route path="/question12" element={<Question12 />} />
-						<Route path="/question13" element={<Question13 />} />
-						<Route path="/question14" element={<Question14 />} />
-						<Route path="/question15" element={<Question15 />} />
-						<Route path="/question16" element={<Question16 />} />
-						<Route path="/question17" element={<Question17 />} />
-						<Route path="/question18" element={<Question18 />} />
-						<Route path="/question19" element={<Question19 />} />
-						<Route path="/question20" element={<Question20 />} />
-						<Route path="/question21" element={<Question21 />} />
-						<Route path="/question22" element={<Question22 />} />
-						<Route path="/question23" element={<Question23 />} />
-						<Route path="/question24" element={<Question24 />} />
-						<Route path="/question25" element={<Question25 />} />
-						<Route path="/question26" element={<Question26 />} />
-						<Route path="/question27" element={<Question27 />} />
-						<Route path="/question28" element={<Question28 />} />
+						
                     </Routes>
                 </div>
             </Router>
@@ -134,4 +59,4 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById("root")
 );
->>>>>>> 38748a9 (Added new questions and modified Question11 and index.js)
+

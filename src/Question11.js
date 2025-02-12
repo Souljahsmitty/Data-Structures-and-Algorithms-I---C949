@@ -75,8 +75,8 @@ const Question11 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-		<Link to="/question10" className="nav-button">← Back to Question 10</Link>
-                <Link to="/question12" className="nav-button">Next Question →</Link>
+				<Link to="/question10" className="nav-button">← Back to Question 9</Link>
+                //<Link to="/question12" className="nav-button">Next Question →</Link>
                 <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
             </div>
         </div>

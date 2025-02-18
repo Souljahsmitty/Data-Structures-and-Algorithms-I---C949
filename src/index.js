@@ -33,6 +33,30 @@ import Question25 from "./Question25";
 import Question26 from "./Question26";
 import Question27 from "./Question27";
 import Question28 from "./Question28";
+import Question29 from "./Question29";
+import Question30 from "./Question30";
+import Question31 from "./Question31";
+import Question32 from "./Question32";
+import Question33 from "./Question33";
+import Question34 from "./Question34";
+import Question35 from "./Question35";
+import Question36 from "./Question36";
+import Question37 from "./Question37";
+import Question38 from "./Question38";
+import Question39 from "./Question39";
+import Question40 from "./Question40";
+import Question41 from "./Question41";
+import Question42 from "./Question42";
+import Question43 from "./Question43";
+import Question44 from "./Question44";
+import Question45 from "./Question45";
+import Question46 from "./Question46";
+import Question47 from "./Question47";
+import Question48 from "./Question48";
+import Question49 from "./Question49";
+import Question50 from "./Question50";
+
+
 
 const App = () => {
     return (
@@ -47,28 +71,50 @@ const App = () => {
                         <Route path="/question4" element={<Question4 />} />
 						<Route path="/question5" element={<Question5 />} />
 						<Route path="/question6" element={<Question6 />} />
-						<Route path="/question7" element={<Question7 />} />
-						<Route path="/question8" element={<Question8 />} />
-						<Route path="/question9" element={<Question9 />} />
-						<Route path="/question10" element={<Question10 />} />
-						<Route path="/question11" element={<Question11 />} />
-						<Route path="/question12" element={<Question12 />} />
-						<Route path="/question13" element={<Question13 />} />
-						<Route path="/question14" element={<Question14 />} />
-						<Route path="/question15" element={<Question15 />} />
-						<Route path="/question16" element={<Question16 />} />
-						<Route path="/question17" element={<Question17 />} />
-						<Route path="/question18" element={<Question18 />} />
-						<Route path="/question19" element={<Question19 />} />
-						<Route path="/question20" element={<Question20 />} />
-						<Route path="/question21" element={<Question21 />} />
-						<Route path="/question22" element={<Question22 />} />
-						<Route path="/question23" element={<Question23 />} />
-						<Route path="/question24" element={<Question24 />} />
-						<Route path="/question25" element={<Question25 />} />
-						<Route path="/question26" element={<Question26 />} />
-						<Route path="/question27" element={<Question27 />} />
-						<Route path="/question28" element={<Question28 />} />
+							<Route path="/question7" element={<Question7 />} />
+							<Route path="/question8" element={<Question8 />} />
+							<Route path="/question9" element={<Question9 />} />
+							<Route path="/question10" element={<Question10 />} />
+							<Route path="/question11" element={<Question11 />} />
+							<Route path="/question12" element={<Question12 />} />
+							<Route path="/question13" element={<Question13 />} />
+							<Route path="/question14" element={<Question14 />} />
+							<Route path="/question15" element={<Question15 />} />
+							<Route path="/question16" element={<Question16 />} />
+							<Route path="/question17" element={<Question17 />} />
+							<Route path="/question18" element={<Question18 />} />
+							<Route path="/question19" element={<Question19 />} />
+							<Route path="/question20" element={<Question20 />} />
+							<Route path="/question21" element={<Question21 />} />
+							<Route path="/question22" element={<Question22 />} />
+							<Route path="/question23" element={<Question23 />} />
+							<Route path="/question24" element={<Question24 />} />
+							<Route path="/question25" element={<Question25 />} />
+							<Route path="/question26" element={<Question26 />} />
+							<Route path="/question27" element={<Question27 />} />
+							<Route path="/question28" element={<Question28 />} />
+							<Route path="/question29" element={<Question29 />} />
+							<Route path="/question30" element={<Question30 />} />
+							<Route path="/question31" element={<Question31 />} />
+							<Route path="/question32" element={<Question32 />} />
+							<Route path="/question33" element={<Question33 />} />
+							<Route path="/question34" element={<Question34 />} />
+							<Route path="/question35" element={<Question35 />} />
+							<Route path="/question36" element={<Question36 />} />
+							<Route path="/question37" element={<Question37 />} />
+							<Route path="/question38" element={<Question38 />} />
+							<Route path="/question39" element={<Question39 />} />
+							<Route path="/question40" element={<Question40 />} />
+							<Route path="/question41" element={<Question41 />} />
+							<Route path="/question42" element={<Question42 />} />
+							<Route path="/question43" element={<Question43 />} />
+							<Route path="/question44" element={<Question44 />} />
+							<Route path="/question45" element={<Question45 />} />
+							<Route path="/question46" element={<Question46 />} />
+							<Route path="/question47" element={<Question47 />} />
+							<Route path="/question48" element={<Question48 />} />
+							<Route path="/question49" element={<Question49 />} />
+							<Route path="/question50" element={<Question50 />} />
                     </Routes>
                 </div>
             </Router>

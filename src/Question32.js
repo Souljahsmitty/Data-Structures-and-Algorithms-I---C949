@@ -5,9 +5,9 @@ import { TimerContext } from "./TimerContext";
 const Question32 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
-    
+
     if (!timerContext) {
-        return <p>Loading...</p>; // Avoids crash if context is undefined
+        return <p>Loading...</p>; // Prevents crash if context is undefined
     }
 
     const { timeLeft, resetTimer } = timerContext;
@@ -18,26 +18,24 @@ const Question32 = () => {
         return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
 
-    const question = "32. What would be the best data structure for a hash table with simple chaining?";
+    const question = "32. What is the advantage that a linked list has over an array?";
     const options = [
-        { label: "A", text: "Array" },
-        { label: "B", text: "Linked List" },
-        { label: "C", text: "Stack" },
-        { label: "D", text: "Queue" }
+        { label: "A", text: "Grows and shrinks as needed" },
+        { label: "B", text: "Allows for random access" },
+        { label: "C", text: "Less memory needed for each element" },
+        { label: "D", text: "Faster search time" }
     ];
 
-    const correctAnswer = "B";  // ✅ "Linked List" is the correct answer
+    const correctAnswer = "A";  // ✅ "Grows and shrinks as needed" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
         if (selected === correctAnswer) {
-            setFeedback("✅ Correct! A **linked list** is commonly used for simple chaining in hash tables to handle collisions.");
+            setFeedback("✅ Correct! A **linked list** dynamically allocates memory, allowing it to grow and shrink as needed without requiring contiguous memory.");
         } else {
-            setFeedback("❌ Incorrect. The correct answer is **B. Linked List**. Chaining resolves hash collisions by storing multiple elements at the same index in a linked list.");
+            setFeedback("❌ Incorrect. The correct answer is **A. Grows and shrinks as needed**. Unlike arrays, linked lists are dynamically allocated and can change size at runtime.");
         }
     };
-
-
 
     // ✅ Handle Reset Button Click
     const handleReset = () => {
@@ -75,13 +73,12 @@ const Question32 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question31" className="nav-button">← Back to Question 31</Link>
+                <Link to="/question31" className="nav-button">← Back to Question 31</Link>
                 <Link to="/question33" className="nav-button">Next Question →</Link>
-                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
+                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>
             </div>
         </div>
     );
 };
 
 export default Question32;
-

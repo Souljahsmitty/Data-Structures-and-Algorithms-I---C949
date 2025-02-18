@@ -5,9 +5,9 @@ import { TimerContext } from "./TimerContext";
 const Question33 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
-    
+
     if (!timerContext) {
-        return <p>Loading...</p>; // Avoids crash if context is undefined
+        return <p>Loading...</p>; // Prevents crash if context is undefined
     }
 
     const { timeLeft, resetTimer } = timerContext;
@@ -20,24 +20,22 @@ const Question33 = () => {
 
     const question = "33. What would be the best data structure for a hash table with simple chaining?";
     const options = [
-        { label: "A", text: "A binary tree" },
-        { label: "B", text: "A doubly linked list" },
-        { label: "C", text: "A singly linked list" },
-        { label: "D", text: "An array" }
+        { label: "A", text: "Array" },
+        { label: "B", text: "Linked List" },
+        { label: "C", text: "Stack" },
+        { label: "D", text: "Queue" }
     ];
 
-    const correctAnswer = "C";  // ✅ "A singly linked list" is the correct answer
+    const correctAnswer = "B";  // ✅ "Linked List" is the correct answer
     const [feedback, setFeedback] = useState("");
 
     const checkAnswer = (selected) => {
         if (selected === correctAnswer) {
-            setFeedback("✅ Correct! A **singly linked list** is typically used for simple chaining in a hash table because it provides efficient insertions and deletions at any position.");
+            setFeedback("✅ Correct! A **linked list** is commonly used for simple chaining in hash tables to handle collisions.");
         } else {
-            setFeedback("❌ Incorrect. The correct answer is **C. A singly linked list**. This structure allows for dynamic growth and efficient chaining of elements in case of hash collisions.");
+            setFeedback("❌ Incorrect. The correct answer is **B. Linked List**. Chaining resolves hash collisions by storing multiple elements at the same index in a linked list.");
         }
     };
-
-
 
     // ✅ Handle Reset Button Click
     const handleReset = () => {
@@ -75,13 +73,12 @@ const Question33 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question32" className="nav-button">← Back to Question 32</Link>
+                <Link to="/question32" className="nav-button">← Back to Question 32</Link>
                 <Link to="/question34" className="nav-button">Next Question →</Link>
-                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
+                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>
             </div>
         </div>
     );
 };
 
 export default Question33;
-

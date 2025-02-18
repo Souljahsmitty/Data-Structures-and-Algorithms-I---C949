@@ -5,9 +5,9 @@ import { TimerContext } from "./TimerContext";
 const Question30 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
-    
+
     if (!timerContext) {
-        return <p>Loading...</p>; // Avoids crash if context is undefined
+        return <p>Loading...</p>; // Prevents crash if context is undefined
     }
 
     const { timeLeft, resetTimer } = timerContext;
@@ -36,8 +36,6 @@ const Question30 = () => {
             setFeedback("❌ Incorrect. The correct answer is **C. Record**. A record allows multiple fields of different types to be stored together as a unit.");
         }
     };
-
-
 
     // ✅ Handle Reset Button Click
     const handleReset = () => {
@@ -75,13 +73,12 @@ const Question30 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question30" className="nav-button">← Back to Question 30</Link>
+                <Link to="/question29" className="nav-button">← Back to Question 29</Link>
                 <Link to="/question31" className="nav-button">Next Question →</Link>
-                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
+                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>
             </div>
         </div>
     );
 };
 
 export default Question30;
-

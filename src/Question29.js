@@ -5,9 +5,9 @@ import { TimerContext } from "./TimerContext";
 const Question29 = () => {
     const navigate = useNavigate();
     const timerContext = useContext(TimerContext);
-    
+
     if (!timerContext) {
-        return <p>Loading...</p>; // Avoids crash if context is undefined
+        return <p>Loading...</p>; // Prevents crash if context is undefined
     }
 
     const { timeLeft, resetTimer } = timerContext;
@@ -36,8 +36,6 @@ const Question29 = () => {
             setFeedback("❌ Incorrect. The correct answer is **B. Array**. Hash tables use an **array** for storing key-value pairs, ensuring fast lookups.");
         }
     };
-
-
 
     // ✅ Handle Reset Button Click
     const handleReset = () => {
@@ -75,13 +73,12 @@ const Question29 = () => {
             <p className="feedback">{feedback}</p>
 
             <div className="nav-buttons">
-				<Link to="/question28" className="nav-button">← Back to Question 28</Link>
+                <Link to="/question28" className="nav-button">← Back to Question 28</Link>
                 <Link to="/question30" className="nav-button">Next Question →</Link>
-                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>  {/* Reset Button */}
+                <button onClick={handleReset} className="reset-button">❌ Quit & Restart</button>
             </div>
         </div>
     );
 };
 
 export default Question29;
-
